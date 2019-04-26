@@ -1,6 +1,5 @@
-git clone https://github.com/GodotNativeTools/cpp_bindings
-git clone https://github.com/GodotNativeTools/godot_headers
-cd cpp_bindings
-scons godotbinpath="godot" headers="../godot_headers/" p=linux generate_bindings=yes
-cd ..
+#!/bin/sh
+pushd ./godot-cpp
+scons godotbinpath="godot" generate_bindings=yes
+popd
 scons
