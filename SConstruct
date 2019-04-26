@@ -175,5 +175,11 @@ env.Append(CPPPATH=[
 sources = []
 add_sources(sources, 'src', 'cpp')
 
-library = env.SharedLibrary(target='bin/namegen', source=sources)
+library = env.SharedLibrary(
+        target='bin/' + 'namegen.{}.{}.{}'.format(
+            env['platform'],
+            env['target'],
+            env['bits'],
+        ), source=sources
+        )
 Default(library)
